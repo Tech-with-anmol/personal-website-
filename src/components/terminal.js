@@ -31,7 +31,7 @@ const TerminalComponent = () => {
               );
               ld.push(
                 <TerminalOutput key={ld.length + 1}>
-                  and it's been a fantastic journey. Over the years, I have acquired skills like
+                  and it&apos;s been a fantastic journey. Over the years, I have acquired skills like
                 </TerminalOutput>
               );
               ld.push(
@@ -43,8 +43,7 @@ const TerminalComponent = () => {
                 <TerminalOutput key={ld.length + 1}>
                   I also love making pixel & vector art for my games.
                 </TerminalOutput>
-              );
-              
+              );              
             
         } else if (input.toLowerCase() === 'project'){
             ld.push(<TerminalOutput key={ld.length + 1}>Redirecting you to github...</TerminalOutput>);
