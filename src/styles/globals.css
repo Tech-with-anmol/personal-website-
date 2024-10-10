@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.terminal{
+    @apply bg-black text-white text-left p-4;
+}
+.navbar-container{
+    @apply relative overflow-hidden;
+}
