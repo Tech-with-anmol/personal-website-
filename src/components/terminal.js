@@ -1,9 +1,10 @@
 import { Input } from 'postcss';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Terminal from 'react-terminal-ui';
 import { ColorMode } from 'react-terminal-ui';
 import { TerminalInput, TerminalOutput } from 'react-terminal-ui';
 import ReactDOM from 'react-dom';
+import { document } from 'postcss';
 
 const TerminalComponent = () => {
     const [lineData, setLineData] = useState([
@@ -11,7 +12,20 @@ const TerminalComponent = () => {
         <TerminalOutput key={1}></TerminalOutput>,
         <TerminalOutput key={2}>Hint: Type help in terminal</TerminalOutput>,
     ]);
+    
+   
 
+    useEffect(() =>{
+      const audioElement = new Audio('background.mp3');
+      const Typingsound = new Audio('typing.mp3');
+      audioElement.load();
+      audioElement.currentTime = 0;
+      audioElement.play();
+      Typingsound.load();
+      Typingsound.currentTime = 0;
+      Typingsound.play();   
+     });
+  
     function handleInput(input) {
         let ld = [...lineData];
         ld.push(<TerminalInput key={ld.length}>{input}</TerminalInput>);
@@ -65,3 +79,4 @@ const TerminalComponent = () => {
 };
 
 export default TerminalComponent;
+
