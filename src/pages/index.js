@@ -14,14 +14,14 @@ export default function Home(){
                 <meta name="profito" content="quick site update"/>               
                 <link rel="icon" href="../app/favicon.ico"/>
             </Head>
-            <div className="navbar-container bg-cover bg-center h-20">
+            <div className="navbar-container bg-cover bg-slate-400 bg-center h-20">
                 <img src="images/gamenavart.jpg"  className="absolute inset-0 w-full h-full object-contain " />
             </div>
-            <main>
+            <main className="bg-black">
                 
-                <article className="prose lg:prose-xl">
+                <article className="prose lg:prose-xl bg-black" >
                     <div className="flex justify-left">
-                    <h4 className="text-left px-5"><TypewriterComponent/></h4>
+                    <h4 className="text-left font-bold font-mono text-amber-200 px-5"><TypewriterComponent/></h4>
                     
                     </div>
                 </article>

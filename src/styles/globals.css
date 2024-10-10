@@ -4,6 +4,8 @@
 
 .terminal{
     @apply bg-black text-white text-left p-4;
+    white-space: pre-wrap;
+    word-wrap: break-word; 
 }
 .navbar-container{
     @apply relative overflow-hidden;
