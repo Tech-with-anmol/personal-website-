@@ -5,39 +5,33 @@ import { ColorMode } from 'react-terminal-ui';
 import { TerminalInput, TerminalOutput } from 'react-terminal-ui';
 import ReactDOM from 'react-dom';
 
-const TerminalComponent = (prop = {}) => {
+const TerminalComponent = () => {
     const [lineData, setLineData] = useState([
-        <TerminalOutput>HI!this is under development</TerminalOutput>,
+        <TerminalOutput key={0}>HI! this is under development</TerminalOutput>,
     ]);
 
-
-    function handleInput(input) {     
+    function handleInput(input) {
         let ld = [...lineData];
-        ld.push(<TerminalInput>{input}</TerminalInput>); 
-        
+        ld.push(<TerminalInput key={ld.length}>{input}</TerminalInput>);
+
         if (input === 'help') {
-            ld.push(<TerminalOutput>Available commands: help, about </TerminalOutput>);
-        } else if(input === 'about') {
-            ld.push(<TerminalOutput>Working bro working</TerminalOutput>);
+            ld.push(<TerminalOutput key={ld.length + 1}>Available commands: help, about</TerminalOutput>);
+        } else if (input === 'about') {
+            ld.push(<TerminalOutput key={ld.length + 1}>Working bro working</TerminalOutput>);
         } else {
-            ld.push(<TerminalOutput>Command not found</TerminalOutput>);
+            ld.push(<TerminalOutput key={ld.length + 1}>Command not found</TerminalOutput>);
         }
 
         setLineData(ld);
-    } 
+    }
 
-    return(
+    return (
         <div className='terminal'>
-            <Terminal name='AK' colorMode={ ColorMode.Dark } onInput={ handleInput }>   
-            {lineData}                  
+            <Terminal name='AK' colorMode={ColorMode.Dark} onInput={handleInput}>
+                {lineData}
             </Terminal>
         </div>
     );
+};
 
-  };
-
-  
- 
 export default TerminalComponent;
-
-
