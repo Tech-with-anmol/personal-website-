@@ -12,22 +12,7 @@ const TerminalComponent = () => {
         <TerminalOutput key={1}></TerminalOutput>,
         <TerminalOutput key={2}>Hint: Type help in terminal</TerminalOutput>,
     ]);
-    
-   
 
-    useEffect(() => {
-      
-      const audioElement = new Audio('background.mp3');
-    
-      audioElement.loop = true;
-    
-      audioElement.play();
-    
-      // Unmute the audio element after a short delay
-      
-    }, []);
-    
-      
     
     
     function handleInput(input) {

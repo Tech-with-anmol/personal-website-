@@ -10,3 +10,7 @@
 .navbar-container{
     @apply relative overflow-hidden;
 }
+@keyframes snowfall {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(600px); }
+  }
