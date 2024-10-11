@@ -15,17 +15,22 @@ const TerminalComponent = () => {
     
    
 
-    useEffect(() =>{
+    useEffect(() => {
+      const audiocontext = new AudioContext();
       const audioElement = new Audio('background.mp3');
-      const Typingsound = new Audio('typing.mp3');
-      audioElement.load();
-      audioElement.currentTime = 0;
+      
+      const sourcenode = audiocontext.createMediaElementSource(audioElement);
+      const gainnode = audiocontext.createGain();
+      
+      audioElement.loop = true;
+      gainnode.gain.value = 15;
+      sourcenode.connect(gainnode);
+      gainnode.connect(audiocontext.destination);
+    
       audioElement.play();
-      Typingsound.load();
-      Typingsound.currentTime = 0;
-      Typingsound.play();   
-     });
-  
+      
+    }, []);
+    
     function handleInput(input) {
         let ld = [...lineData];
         ld.push(<TerminalInput key={ld.length}>{input}</TerminalInput>);

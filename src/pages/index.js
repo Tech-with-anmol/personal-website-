@@ -3,7 +3,7 @@ import Navbar from '../components/Navbar';
 import Link from "next/link";
 import TypewriterComponent from "@/components/typewriter";
 import TerminalComponent from "../components/terminal";
-
+import SnowfallComponent from "@/components/snow";
  
 
 
@@ -19,7 +19,7 @@ export default function Home(){
                 <img src="images/gamenavart.jpg"  className="absolute inset-0 w-full h-full object-contain " />
             </div>
             <main className="bg-black">
-                   
+                   <SnowfallComponent/>
                     <article className="prose lg:prose-xl bg-black" >
                     <div className="flex justify-left">
                     <h4 className="text-left font-bold font-mono text-amber-200 px-5"><TypewriterComponent/></h4>
