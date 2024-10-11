@@ -4,6 +4,7 @@ const AudioPlayer = () => {
   useEffect(() => {
     const audiocontext = new (window.AudioContext || window.webkitAudioContext)();
     const audioElement = new Audio('background.mp3');
+    audioElement.load();
     audioElement.loop = true;
     audioElement.autoplay = true;
     audioElement.muted = true; // Start muted
