@@ -10,6 +10,3 @@
 .navbar-container{
     @apply relative overflow-hidden;
 }
-#backaud {
-    display: none;
-}

@@ -16,18 +16,10 @@ const TerminalComponent = () => {
    
 
     useEffect(() => {
-      const audiocontext = new AudioContext();
+      
       const audioElement = new Audio('background.mp3');
     
       audioElement.loop = true;
-     
-    
-      const sourcenode = audiocontext.createMediaElementSource(audioElement);
-      const gainnode = audiocontext.createGain();
-    
-      gainnode.gain.value = 16;
-      sourcenode.connect(gainnode);
-      gainnode.connect(audiocontext.destination);
     
       audioElement.play();
     
