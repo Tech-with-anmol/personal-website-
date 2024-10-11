@@ -4,6 +4,7 @@ import Link from "next/link";
 import TypewriterComponent from "@/components/typewriter";
 import TerminalComponent from "../components/terminal";
 import SnowfallComponent from "@/components/snow";
+import AudioPlayer from "@/components/audiohandle";
  
 
 
@@ -20,22 +21,9 @@ export default function Home(){
             </div>
             <main className="bg-black">
                    <SnowfallComponent/>
-                   <audio id="background-audio" src="background.mp3" loop autoPlay muted></audio>
+                   <AudioPlayer/>
 
-<div className="fixed bottom-4 right-4 z-50">
-  <button
-    onClick={() => {
-      document.getElementById('background-audio').muted = false;
-      document.getElementById('background-audio').play();
-    }}
-    className="bg-white text-amber-500 font-bold rounded shadow-lg transform transition-all duration-300 ease-in-out flex items-center justify-center"
-    style={{ width: '50px', height: '50px' }}
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-      <path d="M8 5v14l11-7z" />
-    </svg>
-  </button>
-</div>
+
 
 
                     <article className="prose lg:prose-xl bg-black" >
