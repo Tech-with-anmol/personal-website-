@@ -20,6 +20,10 @@ export default function Home(){
             </div>
             <main className="bg-black">
                    <SnowfallComponent/>
+                   <audio id="backaud" controls loop autoPlay>
+                    <source src="background.mp3" type="audio/mp3"/>
+                    
+                   </audio>
                     <article className="prose lg:prose-xl bg-black" >
                     <div className="flex justify-left">
                     <h4 className="text-left font-bold font-mono text-amber-200 px-5"><TypewriterComponent/></h4>
