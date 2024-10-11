@@ -20,7 +20,7 @@ const TerminalComponent = () => {
       const audioElement = new Audio('background.mp3');
     
       audioElement.loop = true;
-      audioElement.muted = true; // Add muted attribute
+     
     
       const sourcenode = audiocontext.createMediaElementSource(audioElement);
       const gainnode = audiocontext.createGain();
@@ -32,9 +32,7 @@ const TerminalComponent = () => {
       audioElement.play();
     
       // Unmute the audio element after a short delay
-      setTimeout(() => {
-        audioElement.muted = false;
-      }, 1000); // Adjust the delay as needed
+      
     }, []);
     
       
