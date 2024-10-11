@@ -18,18 +18,27 @@ const TerminalComponent = () => {
     useEffect(() => {
       const audiocontext = new AudioContext();
       const audioElement = new Audio('background.mp3');
-      
+    
+      audioElement.loop = true;
+      audioElement.muted = true; // Add muted attribute
+    
       const sourcenode = audiocontext.createMediaElementSource(audioElement);
       const gainnode = audiocontext.createGain();
-      
-      audioElement.loop = true;
-      gainnode.gain.value = 15;
+    
+      gainnode.gain.value = 16;
       sourcenode.connect(gainnode);
       gainnode.connect(audiocontext.destination);
     
       audioElement.play();
-      
+    
+      // Unmute the audio element after a short delay
+      setTimeout(() => {
+        audioElement.muted = false;
+      }, 1000); // Adjust the delay as needed
     }, []);
+    
+      
+    
     
     function handleInput(input) {
         let ld = [...lineData];
